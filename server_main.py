@@ -32,7 +32,7 @@ def main(cfg: DictConfig) -> None:
     
     # Start fl server
     fl_server = FLServer(cfg=cfg, model=model, model_name=model_name, model_type=model_type,criterion=criterion, 
-                             optimizer=optimizer, gl_val_loader=gl_val_loader, test_torch=gl_test_torch) # torch
+                             optimizer=optimizer, scheduler=scheduler, gl_val_loader=gl_val_loader, test_torch=gl_test_torch) # torch
     # fl_server = app.FLServer(config=config, model=model, model_name=model_name, x_val=x_val, y_val=y_val) # tensorflow
     fl_server.start()
     

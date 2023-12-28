@@ -78,7 +78,7 @@ def load_partition(dataset, validation_split, label_count, batch_size):
     train_loader = DataLoader(train_dataset, batch_size = minibatch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=minibatch_size, shuffle=False) # shuffle False로 테스트 해보기
     test_loader = DataLoader(test_dataset, batch_size=minibatch_size, shuffle=False)
-    y_label_counter = 1
+    y_label_counter = 2
 
     return train_loader, val_loader, test_loader, y_label_counter
 

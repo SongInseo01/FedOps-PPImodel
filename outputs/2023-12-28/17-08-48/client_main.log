@@ -1,0 +1,14 @@
+[2023-12-28 17:08:48,854][__main__][INFO] - data loaded
+[2023-12-28 17:08:48,858][root][INFO] - init model_type: Pytorch
+[2023-12-28 17:10:14,118][root][INFO] - bulid model
+[2023-12-28 17:10:14,118][root][INFO] - FL start
+[2023-12-28 17:10:14,129][fedops.client.client_api][INFO] - FL_server_IP:port - ccl.gachon.ac.kr:40021
+[2023-12-28 17:10:14,130][root][INFO] - FL learning ready
+[2023-12-28 17:10:14,130][root][INFO] - fl_task_id: ppimodel
+[2023-12-28 17:10:14,130][root][INFO] - dataset: ChristHPdata
+[2023-12-28 17:10:14,131][root][INFO] - output_size: 1
+[2023-12-28 17:10:14,131][root][INFO] - validation_split: 0.2
+[2023-12-28 17:10:14,131][root][INFO] - model_type: Pytorch
+[2023-12-28 17:10:14,138][root][INFO] - notify_fail start
+[2023-12-28 17:10:14,160][root][ERROR] - trainFin
+[2023-12-28 17:16:03,149][root][INFO] - ccl-y-server;f0:2f:74:96:d6:64-client close

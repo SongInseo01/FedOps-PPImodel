@@ -3,3 +3,5 @@ fedops
 torch
 torchvision
 scikit-learn
+numpy
+pandas

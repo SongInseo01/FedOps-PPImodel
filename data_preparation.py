@@ -28,55 +28,47 @@ dataset example
 # Pytorch version
 
 # Define a custom Dataset class
-class CustomDataset(Dataset):
-    def __init__(self, data, targets, indices=None):
-        self.data = data[indices]
-        self.targets = targets[indices]
-    
-    def __len__(self):
-        return len(self.data)
-    
-    def __getitem__(self, idx):
-        return self.data[idx], self.targets[idx]
+class ChristDataset(Dataset):
+        def __init__(self, features, labels):
+            self.features = features
+            self.labels = labels
+        
+        def __len__(self):
+            return len(self.features)
+        
+        def __getitem__(self, idx):
+            return self.features[idx], self.labels[idx]
 
 # MNIST
 def load_partition(dataset, validation_split, label_count, batch_size):
-    now = datetime.now()
-    now_str = now.strftime('%Y-%m-%d %H:%M:%S')
-    fl_task = {"dataset": dataset, "start_execution_time": now_str}
-    fl_task_json = json.dumps(fl_task)
-    logging.info(f'FL_Task - {fl_task_json}')
+    # 데이터 로드 및 전처리
+    chris_data = pd.read_csv('./ischris.csv')
 
-    # MNIST Data Preprocessing
-    transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.5,), (0.5,))  # Adjusted for grayscale
-    ])
+    X_chris = chris_data.iloc[:, :-1]
+    y_chris = chris_data.iloc[:, -1]
+    imputer = SimpleImputer(strategy='mean')
+    X_chris_imputed = imputer.fit_transform(X_chris)
+    X_chris_imputed = pd.DataFrame(X_chris_imputed, columns=X_chris.columns)
 
-    # Download MNIST Dataset
-    full_dataset = datasets.MNIST(root='./dataset/mnist', train=True, download=True, transform=transform)
+    X_train, X_test, y_train, y_test = train_test_split(X_chris_imputed, y_chris, test_size=0.2, random_state=random_seed, stratify=y_chris)
 
-    # Splitting the full dataset into train, validation, and test sets
-    test_split = 0.2
-    train_size = int((1 - validation_split - test_split) * len(full_dataset))
-    validation_size = int(validation_split * len(full_dataset))
-    test_size = len(full_dataset) - train_size - validation_size
-    train_dataset, val_dataset, test_dataset = random_split(full_dataset, [train_size, validation_size, test_size])
+    scaler = StandardScaler()
+    X_train = scaler.fit_transform(X_train)
+    X_test = scaler.transform(X_test)
 
-    # DataLoader for training, validation, and test
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-    val_loader = DataLoader(val_dataset, batch_size=batch_size)
-    test_loader = DataLoader(test_dataset, batch_size=batch_size)
+    X_tr, X_val, y_tr, y_val = train_test_split(X_train, y_train, test_size=0.2, random_state=random_seed, stratify=y_train)
 
-    # Count the number of instances per class in the train dataset
-    y_labels = [y for _, y in train_dataset]
-    y_label_counter = Counter(y_labels)
+    # Dataset 객체 생성
+    train_dataset = ChristDataset(torch.tensor(X_tr, dtype=torch.float32), torch.tensor(y_tr.values, dtype=torch.float32))
+    val_dataset = ChristDataset(torch.tensor(X_val, dtype=torch.float32), torch.tensor(y_val.values, dtype=torch.float32))
+    test_dataset = ChristDataset(torch.tensor(X_test, dtype=torch.float32), torch.tensor(y_test.values, dtype=torch.float32))
 
-    # Log data distribution information
-    for i in range(label_count):  # MNIST has 10 classes
-        data_check_dict = {"label_num": i, "data_size": int(y_label_counter[i])}
-        data_check_json = json.dumps(data_check_dict)
-        logging.info(f'data_check - {data_check_json}')
+    minibatch_size = 64 # @@ 32로 테스트 해보기
+    # DataLoader 설정
+    train_loader = DataLoader(train_dataset, batch_size = minibatch_size, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=minibatch_size, shuffle=False) # shuffle False로 테스트 해보기
+    test_loader = DataLoader(test_dataset, batch_size=minibatch_size, shuffle=False)
+    y_label_counter = 1
 
     return train_loader, val_loader, test_loader, y_label_counter
 
@@ -86,8 +78,24 @@ def gl_model_torch_validation(batch_size):
         transforms.Normalize((0.5,), (0.5,))  # Adjusted for grayscale
     ])
 
+    chris_data = pd.read_csv('./ischris.csv')
+
+    X_chris = chris_data.iloc[:, :-1]
+    y_chris = chris_data.iloc[:, -1]
+    imputer = SimpleImputer(strategy='mean')
+    X_chris_imputed = imputer.fit_transform(X_chris)
+    X_chris_imputed = pd.DataFrame(X_chris_imputed, columns=X_chris.columns)
+
+    X_train, X_test, y_train, y_test = train_test_split(X_chris_imputed, y_chris, test_size=0.2, random_state=random_seed, stratify=y_chris)
+
+    scaler = StandardScaler()
+    X_train = scaler.fit_transform(X_train)
+    X_test = scaler.transform(X_test)
+
+    X_tr, X_val, y_tr, y_val = train_test_split(X_train, y_train, test_size=0.2, random_state=random_seed, stratify=y_train)
+
     # Load the test set of MNIST Dataset
-    val_dataset = datasets.MNIST(root='./dataset/mnist', train=False, download=True, transform=transform)
+    val_dataset = ChristDataset(torch.tensor(X_val, dtype=torch.float32), torch.tensor(y_val.values, dtype=torch.float32))
 
     # DataLoader for validation
     gl_val_loader = DataLoader(val_dataset, batch_size=batch_size)

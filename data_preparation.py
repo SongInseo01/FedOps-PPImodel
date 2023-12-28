@@ -11,7 +11,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
 
-
 random_seed = 72
 np.random.seed(random_seed)
 torch.manual_seed(random_seed)

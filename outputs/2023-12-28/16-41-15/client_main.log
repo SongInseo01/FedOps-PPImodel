@@ -1,2 +1,3 @@
 [2023-12-28 16:41:15,491][__main__][INFO] - data loaded
 [2023-12-28 16:41:15,499][root][INFO] - init model_type: Pytorch
+[2023-12-28 16:54:50,153][root][INFO] - ccl-y-server;f0:2f:74:96:d6:64-client close

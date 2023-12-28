@@ -18,7 +18,7 @@ def main(cfg: DictConfig) -> None:
     # Build init global model using torch
     model = instantiate(cfg.model)
     model_type = cfg.model_type # Check tensorflow or torch model
-    criterion, optimizer, scheduler = models.set_model_hyperparameter(model, cfg.learning_rate)
+    # criterion, optimizer, scheduler = models.set_model_hyperparameter(model, cfg.learning_rate)
     model_name = type(model).__name__
     gl_test_torch = models.test_torch() # set torch test
     
@@ -31,8 +31,7 @@ def main(cfg: DictConfig) -> None:
     # x_val, y_val = fl_data.gl_model_tensorflow_validation() # tensorflow
     
     # Start fl server
-    fl_server = FLServer(cfg=cfg, model=model, model_name=model_name, model_type=model_type,criterion=criterion, 
-                             optimizer=optimizer, scheduler=scheduler, gl_val_loader=gl_val_loader, test_torch=gl_test_torch) # torch
+    fl_server = FLServer(cfg=cfg, model=model, model_name=model_name, model_type=model_type, gl_val_loader=gl_val_loader, test_torch=gl_test_torch) # torch
     # fl_server = app.FLServer(config=config, model=model, model_name=model_name, x_val=x_val, y_val=y_val) # tensorflow
     fl_server.start()
     

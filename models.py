@@ -140,17 +140,21 @@ class PPIBayesNet(nn.Module):
         return x, kl
 
 # Set the loss function and optimizer
-def set_model_hyperparameter(model, lr):
-    criterion = nn.BCEWithLogitsLoss()
-    optimizer = optim.Adam(model.parameters(), lr=lr)
-    scheduler = CosineAnnealingWarmUpRestarts(optimizer, T_0=50, T_mult=2, eta_max=0.01, T_up=10, gamma=0.5)
+# def set_model_hyperparameter(model, lr):
+#     criterion = nn.BCEWithLogitsLoss()
+#     optimizer = optim.Adam(model.parameters(), lr=lr)
+#     scheduler = CosineAnnealingWarmUpRestarts(optimizer, T_0=50, T_mult=2, eta_max=0.01, T_up=10, gamma=0.5)
 
-    return criterion, optimizer, scheduler
+#     return criterion, optimizer, scheduler
 
 # Set the torch train & test
 # torch train
 def train_torch():
-    def custom_train_torch(model, train_loader, val_loader, criterion, optimizer, scheduler, epochs, device: str = "cpu"):
+    def custom_train_torch(model, train_loader, val_loader, epochs, device: str = "cpu"):
+
+        criterion = nn.BCEWithLogitsLoss()
+        optimizer = optim.Adam(model.parameters(), lr=0.0001)
+        scheduler = CosineAnnealingWarmUpRestarts(optimizer, T_0=50, T_mult=2, eta_max=0.01, T_up=10, gamma=0.5)
         """Train the network on the training set."""
         print("Starting training...")
 
@@ -224,7 +228,8 @@ def train_torch():
 # torch test
 def test_torch():
     
-    def custom_test_torch(model, test_loader, criterion, device: str = "cpu"):
+    def custom_test_torch(model, test_loader, device: str = "cpu"):
+        criterion = nn.BCEWithLogitsLoss()
         """Validate the network on the entire test set."""
         print("Starting evalutation...")
         

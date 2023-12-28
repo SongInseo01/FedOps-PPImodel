@@ -1,0 +1,20 @@
+[2023-12-28 17:36:36,392][root][INFO] - data_check - {"label_num": 0, "data_size": 0}
+[2023-12-28 17:36:36,392][__main__][INFO] - data loaded
+[2023-12-28 17:36:36,399][root][INFO] - init model_type: Pytorch
+[2023-12-28 17:38:16,618][root][INFO] - bulid model
+[2023-12-28 17:38:16,618][root][INFO] - FL start
+[2023-12-28 17:38:16,628][fedops.client.client_api][INFO] - FL_server_IP:port - ccl.gachon.ac.kr:40021
+[2023-12-28 17:38:16,629][root][INFO] - FL learning ready
+[2023-12-28 17:38:16,629][root][INFO] - fl_task_id: ppimodel
+[2023-12-28 17:38:16,629][root][INFO] - dataset: ChristHPdata
+[2023-12-28 17:38:16,629][root][INFO] - output_size: 1
+[2023-12-28 17:38:16,630][root][INFO] - validation_split: 0.2
+[2023-12-28 17:38:16,630][root][INFO] - model_type: Pytorch
+[2023-12-28 17:38:16,630][root][INFO] - label_values: [[0, 0]]
+[2023-12-28 17:38:16,647][flwr][INFO] - Opened insecure gRPC connection (no certificates were passed)
+[2023-12-28 17:38:16,649][flwr][DEBUG] - ChannelConnectivity.IDLE
+[2023-12-28 17:38:16,651][flwr][DEBUG] - ChannelConnectivity.CONNECTING
+[2023-12-28 17:38:16,658][flwr][DEBUG] - ChannelConnectivity.READY
+[2023-12-28 17:38:16,862][flwr][DEBUG] - gRPC channel closed
+[2023-12-28 17:38:16,883][root][INFO] - notify_fail start
+[2023-12-28 17:38:16,906][root][ERROR] - trainFin

@@ -89,10 +89,10 @@ DROP_OUT = 0.45
 N_MC_ITER = 20
 
 class PPIBayesNet(nn.Module):
-    def __init__(self, input_dim, output_dim, **bayes_args):
+    def __init__(self, output_size, **bayes_args):
         super().__init__()
         self.model = nn.Sequential (
-            bl.Linear(input_dim, 128, prior_mu=0, prior_logsigmasq=0,
+            bl.Linear(30, 128, prior_mu=0, prior_logsigmasq=0,
                       bias=0.1, approx_post='Radial', kl_method='repar',
                       n_mc_iter=N_MC_ITER, **bayes_args),
             nn.BatchNorm1d(128),
@@ -120,7 +120,7 @@ class PPIBayesNet(nn.Module):
             nn.ReLU(),
             nn.Dropout(DROP_OUT),
 
-            bl.Linear(16, output_dim, **bayes_args)
+            bl.Linear(16, output_size, **bayes_args)
         )
 
     def forward(self, x):

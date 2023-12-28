@@ -52,7 +52,7 @@ def main(cfg: DictConfig) -> None:
     # torch model
     model = instantiate(cfg.model)
     model_type = cfg.model_type     # Check tensorflow or torch model
-    criterion, optimizer = models.set_model_hyperparameter(model,cfg.learning_rate)
+    criterion, optimizer, scheduler = models.set_model_hyperparameter(model, cfg.learning_rate)
     model_name = type(model).__name__
     train_torch = models.train_torch() # set torch train
     test_torch = models.test_torch() # set torch test
@@ -74,6 +74,7 @@ def main(cfg: DictConfig) -> None:
         "y_label_counter" : y_label_counter,
         "criterion" : criterion,
         "optimizer" : optimizer,
+        "scheduler" : scheduler,
         "model" : model,
         "model_name" : model_name,
         "train_torch" : train_torch,

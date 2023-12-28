@@ -2,11 +2,22 @@ import json
 import logging
 from collections import Counter
 from datetime import datetime
-
+import pandas as pd
+import numpy as np
 import torch
 from torch.utils.data import DataLoader, Dataset, random_split
 from torchvision import datasets, transforms
+from sklearn.preprocessing import StandardScaler
+from sklearn.impute import SimpleImputer
+from sklearn.model_selection import train_test_split
 
+
+random_seed = 72
+np.random.seed(random_seed)
+torch.manual_seed(random_seed)
+torch.cuda.manual_seed(random_seed)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
 
 # set log format
 handlers_list = [logging.StreamHandler()]
@@ -42,7 +53,7 @@ class ChristDataset(Dataset):
 # MNIST
 def load_partition(dataset, validation_split, label_count, batch_size):
     # 데이터 로드 및 전처리
-    chris_data = pd.read_csv('./ischris.csv')
+    chris_data = pd.read_csv('/home/ccl/Desktop/isfolder/issrc/fedops/FedOps-PPImodel/ischris.csv')
 
     X_chris = chris_data.iloc[:, :-1]
     y_chris = chris_data.iloc[:, -1]
@@ -78,7 +89,7 @@ def gl_model_torch_validation(batch_size):
         transforms.Normalize((0.5,), (0.5,))  # Adjusted for grayscale
     ])
 
-    chris_data = pd.read_csv('./ischris.csv')
+    chris_data = pd.read_csv('/home/ccl/Desktop/isfolder/issrc/fedops/FedOps-PPImodel/ischris.csv')
 
     X_chris = chris_data.iloc[:, :-1]
     y_chris = chris_data.iloc[:, -1]

@@ -18,7 +18,7 @@ def main(cfg: DictConfig) -> None:
     # Build init global model using torch
     model = instantiate(cfg.model)
     model_type = cfg.model_type # Check tensorflow or torch model
-    criterion, optimizer = models.set_model_hyperparameter(model, cfg.learning_rate)
+    criterion, optimizer, scheduler = models.set_model_hyperparameter(model, cfg.learning_rate)
     model_name = type(model).__name__
     gl_test_torch = models.test_torch() # set torch test
     

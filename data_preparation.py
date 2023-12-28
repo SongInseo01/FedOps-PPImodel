@@ -78,7 +78,16 @@ def load_partition(dataset, validation_split, label_count, batch_size):
     train_loader = DataLoader(train_dataset, batch_size = minibatch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=minibatch_size, shuffle=False) # shuffle False로 테스트 해보기
     test_loader = DataLoader(test_dataset, batch_size=minibatch_size, shuffle=False)
-    y_label_counter = 2
+
+    # Count the number of instances per class in the train dataset
+    y_labels = [y for _, y in train_dataset]
+    y_label_counter = Counter(y_labels)
+
+    # Log data distribution information
+    for i in range(label_count):
+        data_check_dict = {"label_num": i, "data_size": int(y_label_counter[i])}
+        data_check_json = json.dumps(data_check_dict)
+        logging.info(f'data_check - {data_check_json}')
 
     return train_loader, val_loader, test_loader, y_label_counter
 

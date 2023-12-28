@@ -11,3 +11,4 @@
 [2023-12-28 17:28:23,415][root][INFO] - model_type: Pytorch
 [2023-12-28 17:28:23,423][root][INFO] - notify_fail start
 [2023-12-28 17:28:23,444][root][ERROR] - trainFin
+[2023-12-28 17:32:06,020][root][INFO] - ccl-y-server;f0:2f:74:96:d6:64-client close

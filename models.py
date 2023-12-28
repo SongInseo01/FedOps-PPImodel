@@ -270,12 +270,14 @@ def test_torch():
             avg_loss = total_loss / len(test_loader)
             accuracy = correct / total * 100
             auc_score = roc_auc_score(all_targets, all_preds)
+            # Add F1 score to metrics
+            metrics = {"auc_score": auc_score}
             conf_matrix = confusion_matrix(all_targets, all_preds)
 
         
         # metrics=None    
         
         model.to("cpu")  # move model back to CPU
-        return avg_loss, auc_score, conf_matrix
+        return avg_loss, accuracy, metrics
     
     return custom_test_torch

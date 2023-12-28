@@ -18,3 +18,4 @@
 [2023-12-28 17:38:16,862][flwr][DEBUG] - gRPC channel closed
 [2023-12-28 17:38:16,883][root][INFO] - notify_fail start
 [2023-12-28 17:38:16,906][root][ERROR] - trainFin
+[2023-12-28 17:44:31,923][root][INFO] - ccl-y-server;f0:2f:74:96:d6:64-client close

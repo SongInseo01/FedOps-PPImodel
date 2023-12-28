@@ -168,7 +168,7 @@ def train_torch():
             with tqdm(total=len(train_loader), desc=f'Epoch {epoch+1}/{epochs}', unit='batch') as pbar:
                 train_loss, valid_loss = 0, 0
 
-                model.trian()
+                model.train()
                 for x_minibatch, y_minibatch in train_loader:
                     x_minibatch = x_minibatch.to(device)
                     y_minibatch = y_minibatch.view(-1, 1).to(device) # 타겟 레이블 형태 조정

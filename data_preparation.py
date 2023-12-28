@@ -52,7 +52,7 @@ class ChristDataset(Dataset):
 # MNIST
 def load_partition(dataset, validation_split, label_count, batch_size):
     # 데이터 로드 및 전처리
-    chris_data = pd.read_csv('/home/ccl/Desktop/isfolder/issrc/fedops/FedOps-PPImodel/ischris.csv')
+    chris_data = pd.read_csv('./ischris.csv')
 
     X_chris = chris_data.iloc[:, :-1]
     y_chris = chris_data.iloc[:, -1]
@@ -88,7 +88,7 @@ def gl_model_torch_validation(batch_size):
         transforms.Normalize((0.5,), (0.5,))  # Adjusted for grayscale
     ])
 
-    chris_data = pd.read_csv('/home/ccl/Desktop/isfolder/issrc/fedops/FedOps-PPImodel/ischris.csv')
+    chris_data = pd.read_csv('./ischris.csv')
 
     X_chris = chris_data.iloc[:, :-1]
     y_chris = chris_data.iloc[:, -1]

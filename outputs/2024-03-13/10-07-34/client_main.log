@@ -1,0 +1,26 @@
+[2024-03-13 10:07:34,832][root][INFO] - data_check - {"label_num": 0, "data_size": 0}
+[2024-03-13 10:07:34,832][__main__][INFO] - data loaded
+[2024-03-13 10:07:34,837][root][INFO] - init model_type: Pytorch
+[2024-03-13 10:09:03,621][root][INFO] - bulid model
+[2024-03-13 10:09:03,621][root][INFO] - FL start
+[2024-03-13 10:09:03,631][fedops.client.client_api][INFO] - FL_server_IP:port - ccl.gachon.ac.kr:40021
+[2024-03-13 10:09:03,632][root][INFO] - FL learning ready
+[2024-03-13 10:09:03,633][root][INFO] - fl_task_id: ppimodel
+[2024-03-13 10:09:03,633][root][INFO] - dataset: ChristHPdata
+[2024-03-13 10:09:03,633][root][INFO] - output_size: 1
+[2024-03-13 10:09:03,633][root][INFO] - validation_split: 0.2
+[2024-03-13 10:09:03,633][root][INFO] - model_type: Pytorch
+[2024-03-13 10:09:03,633][root][INFO] - label_values: [[0, 0]]
+[2024-03-13 10:09:03,645][flwr][INFO] - Opened insecure gRPC connection (no certificates were passed)
+[2024-03-13 10:09:03,647][flwr][DEBUG] - ChannelConnectivity.IDLE
+[2024-03-13 10:09:03,648][flwr][DEBUG] - ChannelConnectivity.CONNECTING
+[2024-03-13 10:09:03,653][flwr][DEBUG] - ChannelConnectivity.READY
+[2024-03-13 10:10:40,808][fedops.client.client_fl][INFO] - train_performance - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 1, "gl_model_v": 4, "train_loss": 0.685943216085434, "train_accuracy": 94.3342776203966, "train_auc_score": 0.900987224157956, "val_loss": 0.7007603049278259, "val_accuracy": 84.26966292134831, "val_auc_score": 0.6556372549019608, "train_time": 97.11196660995483, "wandb_name": ""}
+[2024-03-13 10:10:41,090][fedops.client.client_fl][INFO] - test - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 1, "test_loss": 0.7326861023902893, "test_accuracy": 77.47747747747748, "gl_model_v": 4, "wandb_name": ""}
+[2024-03-13 10:10:41,136][flwr][DEBUG] - gRPC channel closed
+[2024-03-13 10:10:41,136][flwr][INFO] - Disconnect and shut down
+[2024-03-13 10:10:41,138][root][INFO] - fl learning finished
+[2024-03-13 10:10:41,139][root][INFO] - client_operation_time - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "operation_time": 97.50602221488953, "gl_model_v": 4}
+[2024-03-13 10:10:41,184][root][INFO] - try notify_fin
+[2024-03-13 10:10:41,204][root][INFO] - trainFin
+[2024-03-13 10:10:41,204][root][INFO] - FL Client Learning Finish

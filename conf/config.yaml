@@ -9,11 +9,11 @@ model:
   output_size: 1 # Input your model's output size (only classification)
 
 dataset:
-    name: 'ChristHPdata' # Input your data name
+    name: 'christdata' # Input your data name
     validation_split: 0.2 # Ratio of dividing train data by validation
 
 # client
-task_id: 'ppimodel' # Input your Task Name that you register in FedOps Website
+task_id: 'ppibayesian' # Input your Task Name that you register in FedOps Website
 
 wandb: 
   use: false # Whether to use wandb
@@ -23,7 +23,7 @@ wandb:
 
 
 # server
-num_epochs: 100 # number of local epochs
+num_epochs: 20 # number of local epochs
 batch_size: 64
 num_rounds: 10 # Number of rounds to perform
 clients_per_round: 1 # Number of clients participating in the round

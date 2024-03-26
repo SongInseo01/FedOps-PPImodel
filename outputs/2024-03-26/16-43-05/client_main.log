@@ -1,0 +1,47 @@
+[2024-03-26 16:43:05,718][root][INFO] - data_check - {"label_num": 0, "data_size": 0}
+[2024-03-26 16:43:05,718][__main__][INFO] - data loaded
+[2024-03-26 16:43:05,722][__main__][INFO] - Latest Local Model download
+[2024-03-26 16:43:05,722][root][INFO] - downloaded local_model_name: PPIBayesNet_local_model_V6.pth
+[2024-03-26 16:43:05,726][root][INFO] - init model_type: Pytorch
+[2024-03-26 16:44:28,785][root][INFO] - bulid model
+[2024-03-26 16:44:28,785][root][INFO] - FL start
+[2024-03-26 16:44:28,793][fedops.client.client_api][INFO] - FL_server_IP:port - ccl.gachon.ac.kr:40021
+[2024-03-26 16:44:28,794][root][INFO] - FL learning ready
+[2024-03-26 16:44:28,794][root][INFO] - fl_task_id: ppimodel
+[2024-03-26 16:44:28,794][root][INFO] - dataset: ChristHPdata
+[2024-03-26 16:44:28,794][root][INFO] - output_size: 1
+[2024-03-26 16:44:28,794][root][INFO] - validation_split: 0.2
+[2024-03-26 16:44:28,794][root][INFO] - model_type: Pytorch
+[2024-03-26 16:44:28,794][root][INFO] - label_values: [[0, 0]]
+[2024-03-26 16:44:28,806][flwr][INFO] - Opened insecure gRPC connection (no certificates were passed)
+[2024-03-26 16:44:28,809][flwr][DEBUG] - ChannelConnectivity.IDLE
+[2024-03-26 16:44:28,809][flwr][DEBUG] - ChannelConnectivity.CONNECTING
+[2024-03-26 16:44:28,813][flwr][DEBUG] - ChannelConnectivity.READY
+[2024-03-26 16:45:03,430][fedops.client.client_fl][INFO] - train_performance - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 1, "gl_model_v": 7, "train_loss": 0.7176922261714935, "train_accuracy": 82.43626062322946, "train_auc_score": 0.5536374194910779, "val_loss": 0.7452361285686493, "val_accuracy": 77.52808988764045, "val_auc_score": 0.4791666666666667, "train_time": 34.57356595993042, "wandb_name": ""}
+[2024-03-26 16:45:03,796][fedops.client.client_fl][INFO] - test - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 1, "test_loss": 0.737573891878128, "test_accuracy": 81.08108108108108, "gl_model_v": 7, "wandb_name": ""}
+[2024-03-26 16:45:35,771][fedops.client.client_fl][INFO] - train_performance - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 2, "gl_model_v": 7, "train_loss": 0.7208779354890188, "train_accuracy": 83.28611898016997, "train_auc_score": 0.5646974976243267, "val_loss": 0.715749204158783, "val_accuracy": 85.39325842696628, "val_auc_score": 0.6625816993464052, "train_time": 31.90107560157776, "wandb_name": ""}
+[2024-03-26 16:45:35,988][fedops.client.client_fl][INFO] - test - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 2, "test_loss": 0.7268238365650177, "test_accuracy": 81.08108108108108, "gl_model_v": 7, "wandb_name": ""}
+[2024-03-26 16:46:08,019][fedops.client.client_fl][INFO] - train_performance - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 3, "gl_model_v": 7, "train_loss": 0.7356037497520447, "train_accuracy": 78.47025495750708, "train_auc_score": 0.5292471755886389, "val_loss": 0.7315641939640045, "val_accuracy": 76.40449438202246, "val_auc_score": 0.4722222222222222, "train_time": 31.98410677909851, "wandb_name": ""}
+[2024-03-26 16:46:08,237][fedops.client.client_fl][INFO] - test - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 3, "test_loss": 0.7180713713169098, "test_accuracy": 81.08108108108108, "gl_model_v": 7, "wandb_name": ""}
+[2024-03-26 16:46:40,094][fedops.client.client_fl][INFO] - train_performance - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 4, "gl_model_v": 7, "train_loss": 0.7264934579531351, "train_accuracy": 83.0028328611898, "train_auc_score": 0.586289726533629, "val_loss": 0.7215574383735657, "val_accuracy": 79.7752808988764, "val_auc_score": 0.5155228758169934, "train_time": 31.827749967575073, "wandb_name": ""}
+[2024-03-26 16:46:40,327][fedops.client.client_fl][INFO] - test - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 4, "test_loss": 0.7281135022640228, "test_accuracy": 81.08108108108108, "gl_model_v": 7, "wandb_name": ""}
+[2024-03-26 16:47:11,818][fedops.client.client_fl][INFO] - train_performance - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 5, "gl_model_v": 7, "train_loss": 0.7298031151294708, "train_accuracy": 81.01983002832861, "train_auc_score": 0.5332594235033259, "val_loss": 0.7559857070446014, "val_accuracy": 77.52808988764045, "val_auc_score": 0.5465686274509803, "train_time": 31.449134826660156, "wandb_name": ""}
+[2024-03-26 16:47:12,060][fedops.client.client_fl][INFO] - test - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 5, "test_loss": 0.743667483329773, "test_accuracy": 75.67567567567568, "gl_model_v": 7, "wandb_name": ""}
+[2024-03-26 16:47:43,779][fedops.client.client_fl][INFO] - train_performance - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 6, "gl_model_v": 7, "train_loss": 0.7297409872213999, "train_accuracy": 81.30311614730878, "train_auc_score": 0.5350015837820715, "val_loss": 0.745586097240448, "val_accuracy": 79.7752808988764, "val_auc_score": 0.5829248366013072, "train_time": 31.67536211013794, "wandb_name": ""}
+[2024-03-26 16:47:44,028][fedops.client.client_fl][INFO] - test - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 6, "test_loss": 0.7314748764038086, "test_accuracy": 81.98198198198197, "gl_model_v": 7, "wandb_name": ""}
+[2024-03-26 16:48:15,374][fedops.client.client_fl][INFO] - train_performance - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 7, "gl_model_v": 7, "train_loss": 0.7297109762827555, "train_accuracy": 81.01983002832861, "train_auc_score": 0.521592228909302, "val_loss": 0.7614744603633881, "val_accuracy": 75.28089887640449, "val_auc_score": 0.5102124183006536, "train_time": 31.30629277229309, "wandb_name": ""}
+[2024-03-26 16:48:15,662][fedops.client.client_fl][INFO] - test - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 7, "test_loss": 0.7318240404129028, "test_accuracy": 80.18018018018019, "gl_model_v": 7, "wandb_name": ""}
+[2024-03-26 16:48:47,307][fedops.client.client_fl][INFO] - train_performance - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 8, "gl_model_v": 7, "train_loss": 0.7548696200052897, "train_accuracy": 79.60339943342775, "train_auc_score": 0.5070478302185619, "val_loss": 0.7629031836986542, "val_accuracy": 77.52808988764045, "val_auc_score": 0.6813725490196078, "train_time": 31.600415468215942, "wandb_name": ""}
+[2024-03-26 16:48:47,561][fedops.client.client_fl][INFO] - test - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 8, "test_loss": 0.7513839602470398, "test_accuracy": 81.08108108108108, "gl_model_v": 7, "wandb_name": ""}
+[2024-03-26 16:49:19,129][fedops.client.client_fl][INFO] - train_performance - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 9, "gl_model_v": 7, "train_loss": 0.7336615522702535, "train_accuracy": 80.73654390934844, "train_auc_score": 0.5081828740365325, "val_loss": 0.7304169535636902, "val_accuracy": 83.14606741573034, "val_auc_score": 0.5588235294117647, "train_time": 31.528157234191895, "wandb_name": ""}
+[2024-03-26 16:49:19,356][fedops.client.client_fl][INFO] - test - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 9, "test_loss": 0.738604724407196, "test_accuracy": 81.98198198198197, "gl_model_v": 7, "wandb_name": ""}
+[2024-03-26 16:49:51,232][fedops.client.client_fl][INFO] - train_performance - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 10, "gl_model_v": 7, "train_loss": 0.7429400086402893, "train_accuracy": 82.15297450424929, "train_auc_score": 0.5577288565093442, "val_loss": 0.7283623516559601, "val_accuracy": 82.02247191011236, "val_auc_score": 0.5294117647058824, "train_time": 31.834758281707764, "wandb_name": ""}
+[2024-03-26 16:49:51,454][fedops.client.client_fl][INFO] - test - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "round": 10, "test_loss": 0.7453001141548157, "test_accuracy": 81.08108108108108, "gl_model_v": 7, "wandb_name": ""}
+[2024-03-26 16:49:51,480][flwr][DEBUG] - gRPC channel closed
+[2024-03-26 16:49:51,481][flwr][INFO] - Disconnect and shut down
+[2024-03-26 16:49:51,481][root][INFO] - fl learning finished
+[2024-03-26 16:49:51,483][root][INFO] - client_operation_time - {"fl_task_id": "ppimodel", "client_mac": "f0:2f:74:96:d6:64", "client_name": "ccl-y-server", "operation_time": 322.68821930885315, "gl_model_v": 7}
+[2024-03-26 16:49:51,543][root][INFO] - try notify_fin
+[2024-03-26 16:49:51,562][root][INFO] - trainFin
+[2024-03-26 16:49:51,562][root][INFO] - FL Client Learning Finish
+[2024-03-26 16:50:10,520][root][INFO] - ccl-y-server;f0:2f:74:96:d6:64-client close

@@ -1,0 +1,8 @@
+[2024-03-26 17:11:48,848][root][INFO] - data_check - {"label_num": 0, "data_size": 0}
+[2024-03-26 17:11:48,848][__main__][INFO] - data loaded
+[2024-03-26 17:11:48,852][__main__][INFO] - Latest Local Model download
+[2024-03-26 17:11:48,852][root][INFO] - downloaded local_model_name: PPIBayesNet_local_model_V7.pth
+[2024-03-26 17:11:48,856][root][INFO] - init model_type: Pytorch
+[2024-03-26 17:12:08,829][root][INFO] - bulid model
+[2024-03-26 17:12:08,829][root][INFO] - FL start
+[2024-03-26 17:12:19,783][root][INFO] - ccl-y-server;f0:2f:74:96:d6:64-client close

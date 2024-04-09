@@ -16,9 +16,9 @@ dataset:
 task_id: 'ppibayesian' # Input your Task Name that you register in FedOps Website
 
 wandb: 
-  use: false # Whether to use wandb
-  key: 'your wandb api key' # Input your wandb api key
-  account: 'your wandb account' # Input your wandb account
+  use: true # Whether to use wandb
+  key: ce53e10675102394f9c8ac9f89c76bcbf14ea805 # Input your wandb api key
+  account: z8086486 # Input your wandb account
   project: '${dataset.name}_${task_id}'
 
 

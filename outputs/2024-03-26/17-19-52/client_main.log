@@ -3,3 +3,4 @@
 [2024-03-26 17:19:52,743][__main__][INFO] - Latest Local Model download
 [2024-03-26 17:19:52,743][root][INFO] - downloaded local_model_name: PPIBayesNet_local_model_V1.pth
 [2024-03-26 17:19:52,747][root][INFO] - init model_type: Pytorch
+[2024-03-26 17:22:19,761][root][INFO] - ccl-y-server;f0:2f:74:96:d6:64-client close

@@ -1,0 +1,6 @@
+[2024-04-09 16:05:07,700][root][INFO] - data_check - {"label_num": 0, "data_size": 0}
+[2024-04-09 16:05:07,700][__main__][INFO] - data loaded
+[2024-04-09 16:05:07,706][__main__][INFO] - Latest Local Model download
+[2024-04-09 16:05:07,706][root][INFO] - downloaded local_model_name: PPIBayesNet_local_model_V1.pth
+[2024-04-09 16:05:07,712][root][INFO] - init model_type: Pytorch
+[2024-04-09 16:21:46,367][root][INFO] - ccl-y-server;f0:2f:74:96:d6:64-client close
